@@ -13,8 +13,8 @@ public class LambdaServlet extends HttpServlet {
   protected void doGet(final HttpServletRequest req, final HttpServletResponse resp) throws ServletException, IOException {
     final PrintWriter w = resp.getWriter();
     System.getProperties()
-      .filter((l, r) -> r.toString().contains("1.8"))
-      .sorted((l, r) -> l.toString().compareTo(r.toString()))
-      .forEach((l, r) -> w.println(l.toString() + "=" + r.toString()));
+      .filter((k, v) -> v.toString().contains("1.8"))
+      .sorted((k, v) -> k.toString().compareTo(v.toString()))
+      .forEach((k, v) -> w.println(k.toString() + "=" + v.toString()));
   }
 }
